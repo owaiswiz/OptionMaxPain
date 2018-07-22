@@ -18,5 +18,53 @@ If one can identify this price point, then it’s most likely that this is the p
 
 [Read more about Option Max Pain](https://zerodha.com/varsity/chapter/max-pain-pcr-ratio/ "Read more about Option Max Pain")
 
-## How to use this calculator?
-WIP
+---
+## Requirements
++ Ruby ( v2.4+ Recommended)
+
+
+## How to use?
+#### Ready Made Script for National Stock Exchange, India
+##### 1) Installing the Gem
+```sh
+$ gem install option_max_pain
+```
+##### 2) Download the script inside the examples folder called nse_calculator.rb and run using ruby
+```text
+$ ruby nse_calculator.rb
+----- Calculate Option Max Pain - NSE, India -----
+Enter Stock Symbol as on NSE's Website (Eg. NIFTY or HEROMOTOCO), press Ctrl+C to exit
+nifty
+
+The min loss to option writers is at the strike Rs 10900.
+The loss to option writers if market expired right now at this strike is Rs 7882650000
+
+```
+---
+#### Programmatically
+##### 1) Installing the Gem
+```sh
+$ gem install option_max_pain
+```
+##### 2) Using it to Calculate Max Pain
+- If you want to calculate option pain of equity options listed on the National Stock Exchange, just pass in the underlying stock symbol of the option like follow
+	```ruby
+    require 'option_max_pain'
+    result = OptionMaxPain::NseCalculator.calculate_max_pain('NIFTY')
+    
+    # result[0] contains the strike price which is the option pain strike price
+    # result[1] contains the loss that is cause to options writer if market expired right now at this strike price
+- If you want to calculate option pain using your own data, you can just require base calculator class and pass the data in the following format yourself
+	```ruby
+    require 'option_max_pain'
+    options = {
+      7700 => {call: 1823400, put: 5783025},
+      7800 => {call: 3448575, put: 4864125},
+      7900 => {call: 5367450, put: 2559375}
+    }
+    # options should be a hash with available strikes as keys that contains a hash of its Open Interest of call and put options
+
+    result = OptionMaxPain::Calculator.calculate_max_pain(options) 
+    # result[0] contains the strike price which is the option pain strike price
+    # result[1] contains the loss that is caused to options writer if market expired right now at this strike price
+    ```
