@@ -1,6 +1,6 @@
 require "test_helper"
 
-class OptionMaxPainTest < Minitest::Test
+class OptionMaxPainCalculatorTest < Minitest::Test
   def test_that_it_can_calculate_max_pain
     options = {
       7700 => {call: 1823400, put: 5783025},

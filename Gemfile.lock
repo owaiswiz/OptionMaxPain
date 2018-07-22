@@ -30,15 +30,16 @@ GEM
       ruby_dep (~> 1.2)
     lumberjack (1.0.13)
     method_source (0.9.0)
+    mini_portile2 (2.3.0)
     minitest (5.11.3)
     minitest-reporters (1.3.0)
       ansi
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    minitest-rg (5.2.0)
-      minitest (~> 5.0)
     nenv (0.3.0)
+    nokogiri (1.8.4)
+      mini_portile2 (~> 2.3.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -63,7 +64,7 @@ DEPENDENCIES
   guard-minitest
   minitest (~> 5.0)
   minitest-reporters
-  minitest-rg
+  nokogiri
   option_max_pain!
   rake (~> 10.0)
 
