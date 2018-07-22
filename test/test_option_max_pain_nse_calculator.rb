@@ -13,7 +13,7 @@ class OptionMaxPainNseCalculatorTest < Minitest::Test
   end
 
   def test_that_it_can_calculate_max_pain_of_specified_stock
-    assert_equal Hash, ::OptionMaxPain::NseCalculator.calculate_max_pain('HEROMOTOCO').class
-    assert_equal Hash, ::OptionMaxPain::NseCalculator.calculate_max_pain('NIFTY').class
+    assert_equal Array, ::OptionMaxPain::NseCalculator.calculate_max_pain('HEROMOTOCO').class
+    assert_equal Array, ::OptionMaxPain::NseCalculator.calculate_max_pain('NIFTY').class
   end
 end

@@ -8,7 +8,7 @@ class OptionMaxPainCalculatorTest < Minitest::Test
       7900 => {call: 5367450, put: 2559375}
     }
 
-    result_hash = {7800 => 438277500}
-    assert_equal result_hash, ::OptionMaxPain::Calculator.calculate_max_pain(options) 
+    result_array = [7800, 438277500]
+    assert_equal result_array, ::OptionMaxPain::Calculator.calculate_max_pain(options) 
   end
 end

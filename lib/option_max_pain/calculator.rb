@@ -20,7 +20,7 @@ module OptionMaxPain
 
         options_pain[strike] = loss_due_to_call + loss_due_to_put
       end
-      [options_pain.min_by {|k,v| v}].to_h
+      options_pain.min_by {|k,v| v}
     end
   end
 end
