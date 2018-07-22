@@ -13,7 +13,7 @@ module OptionMaxPain
     end
 
     def self.get_col_index(element)
-      element.parent.element_children.index(element) + 1
+      element.parent.element_children.index(element)
     end
   end
 end
